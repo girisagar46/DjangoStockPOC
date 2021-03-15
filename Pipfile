@@ -21,6 +21,7 @@ django-environ = "*"
 drf-yasg = "*"
 djangorestframework = "*"
 gunicorn = "*"
+django-bootstrap-form = "*"
 
 [requires]
 python_version = "3.9.0"
