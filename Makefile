@@ -8,6 +8,8 @@ all:
 		make lint : runs linters on all project files and shows the changes \n\
 		make test : run the test suite  \n\
 		make coverage : runs tests and creates a report of the coverage \n\
+		make clean : Clean up the db \n\
+		make import : Populate the DB \n\
  	"
 
 install:
@@ -56,3 +58,12 @@ superuser:
 test:
 	@echo 'Running tests'
 	pipenv run python manage.py test
+
+clean:
+	@echo 'Flushing the db'
+	pipenv run python manage.py flush
+
+import:
+	@echo 'Import the data to DB'
+	pipenv run python manage.py import
+

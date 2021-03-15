@@ -18,6 +18,8 @@ INSTALLED_APPS = [
     # Custom apps
     'finance.apps.FinanceConfig',
 
+
+    # Third party app
     'rest_framework',
     'drf_yasg',
     'django.contrib.admin',
@@ -29,10 +31,8 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'django_filters',
     'bootstrapform',
-
-
-
 ]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
