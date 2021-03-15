@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from LocalFolioPOC.models import StockHistory
+from finance.models import StockHistory
 
 
 class StockHistorySerializer(serializers.ModelSerializer):

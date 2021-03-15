@@ -24,7 +24,7 @@
             {% for object in object_list %}
                 <tr>
                     <td>
-                        <a href="{% url 'LocalFolioPOC:stock_history_detail' pk=object.pk %}">{{ object.company_symbol__symbol }}</a>
+                        <a href="{% url 'finance:stock_history_detail' pk=object.pk %}">{{ object.company_symbol__symbol }}</a>
                     </td>
                     <td>{{ object.date|safe }}</td>
                     <td>{{ object.open|usd }}</td>
