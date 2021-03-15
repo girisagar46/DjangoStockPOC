@@ -1,14 +1,18 @@
-from rest_framework import status
-from rest_framework.response import Response
-from rest_framework.views import APIView
+from rest_framework import generics
+from rest_framework.pagination import PageNumberPagination
 
 from finance.models import StockHistory
 from finance.serializers import StockHistorySerializer
 
 
-class CompanyHistoryListAPIView(APIView):
-    http_method_names = ['get', ]
+# https://www.django-rest-framework.org/api-guide/pagination/
+class StandardResultsSetPagination(PageNumberPagination):
+    page_size = 100
+    page_size_query_param = 'page_size'
+    max_page_size = 150
 
-    def get(self, request, *args, **kwargs):
-        serializer = StockHistorySerializer(StockHistory.objects.order_by('-date')[:100], many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+
+class CompanyHistoryListAPIView(generics.ListAPIView):
+    queryset = StockHistory.objects.order_by('-date')
+    serializer_class = StockHistorySerializer
+    pagination_class = StandardResultsSetPagination

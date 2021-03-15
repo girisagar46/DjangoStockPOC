@@ -9,7 +9,8 @@ all:
 		make test : run the test suite  \n\
 		make coverage : runs tests and creates a report of the coverage \n\
 		make clean : Clean up the db \n\
-		make import : Populate the DB \n\
+		make initialize-offline : Populate the DB from offline file \n\
+		make initialize-online : Populate the DB by getting data from online \n\
  	"
 
 install:
@@ -63,7 +64,11 @@ clean:
 	@echo 'Flushing the db'
 	pipenv run python manage.py flush
 
-import:
-	@echo 'Import the data to DB'
-	pipenv run python manage.py import
+initialize-offline:
+	@echo 'Import the data to DB from local file'
+	pipenv run python manage.py initialize -l true
+
+initialize-online:
+	@echo 'Import the data to DB from local file'
+	pipenv run python manage.py initialize -l false
 
