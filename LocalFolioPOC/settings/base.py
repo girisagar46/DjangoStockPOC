@@ -15,7 +15,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # Application definition
 INSTALLED_APPS = [
-    'LocalFolioPOC.apps.LocalFolioPOCConfig',
+    # Custom apps
+    'finance.apps.FinanceConfig',
+
+
+    # Third party app
     'rest_framework',
     'drf_yasg',
     'django.contrib.admin',
@@ -28,6 +32,7 @@ INSTALLED_APPS = [
     'django_filters',
     'bootstrapform',
 ]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -38,7 +43,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'microservice.urls'
+ROOT_URLCONF = 'LocalFolioPOC.urls'
 
 TEMPLATES = [
     {
@@ -56,7 +61,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'microservice.wsgi.application'
+WSGI_APPLICATION = 'LocalFolioPOC.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -88,7 +93,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTH_USER_MODEL = 'LocalFolioPOC.User'
+AUTH_USER_MODEL = 'finance.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
@@ -118,13 +123,4 @@ STATICFILES_FINDERS = [
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
-}
-
-SWAGGER_SETTINGS = {
-    'SECURITY_DEFINITIONS': {
-        'basic': {
-            'type': 'basic'
-        }
-    },
-    'USE_SESSION_AUTH': False
 }

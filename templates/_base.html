@@ -4,39 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <title>LocalFolio Finance</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 
 <body class="text-center">
 
-    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-      <header class="masthead mb-auto">
+<div class="cover-container d-flex flex-column bd-highlight mb-3">
+    <header class="masthead mb-auto">
         <div class="inner">
-          <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link active" href="{% url 'LocalFolioPOC:index' %}">Home</a>
-          </nav>
+            <h3 class="masthead-brand"><a class="nav-link active" href="{% url 'finance:index' %}">LocalFolio</a></h3>
+
+            <nav class="nav nav-masthead justify-content-center">
+                <a class="nav-link active" href="{% url 'finance:index' %}">Home</a>
+            </nav>
         </div>
-      </header>
+    </header>
 
-      {% block content %}
-      {% endblock content %}
+    {% block content %}
+    {% endblock content %}
 
-      <footer class="mastfoot mt-auto">
+    <footer class="mastfoot mt-auto">
         <div class="inner">
-          <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+            <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a
+                    href="https://twitter.com/mdo">@mdo</a>.</p>
         </div>
-      </footer>
-    </div>
+    </footer>
+</div>
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-  </body>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
 
 
 </html>

@@ -8,6 +8,9 @@ all:
 		make lint : runs linters on all project files and shows the changes \n\
 		make test : run the test suite  \n\
 		make coverage : runs tests and creates a report of the coverage \n\
+		make clean : Clean up the db \n\
+		make initialize-offline : Populate the DB from offline file \n\
+		make initialize-online : Populate the DB by getting data from online \n\
  	"
 
 install:
@@ -56,3 +59,16 @@ superuser:
 test:
 	@echo 'Running tests'
 	pipenv run python manage.py test
+
+clean:
+	@echo 'Flushing the db'
+	pipenv run python manage.py flush
+
+initialize-offline:
+	@echo 'Import the data to DB from local file'
+	pipenv run python manage.py initialize -l true
+
+initialize-online:
+	@echo 'Import the data to DB from local file'
+	pipenv run python manage.py initialize -l false
+
