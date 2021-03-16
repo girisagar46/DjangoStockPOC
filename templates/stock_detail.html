@@ -1,0 +1,70 @@
+{% extends '_base.html' %}
+{% load humanize %}
+{% load financetags %}
+{% block content %}
+    <img
+            src="https://raw.githubusercontent.com/antoinevulcain/Financial-Modeling-Prep-API/master/stock-images-assets/{{ object.company_symbol|lower }}.png"
+            class="img-thumbnail"/>
+    <table class="table table-responsive-lg table-bordered table-striped">
+        <tbody>
+        <tr>
+            <th>Company Symbol</th>
+            <td>{{ object.company_symbol }}</td>
+        </tr>
+        <tr>
+            <th>Date</th>
+            <td>{{ object.date }}</td>
+        </tr>
+        <tr>
+            <th>Open Price</th>
+            <td>{{ object.open|usd }}</td>
+        </tr>
+        <tr>
+            <th>High Price</th>
+            <td>{{ object.high|usd }}</td>
+        </tr>
+        <tr>
+            <th>Low Price</th>
+            <td>{{ object.low|usd }}</td>
+        </tr>
+        <tr>
+            <th>Closing Price</th>
+            <td>{{ object.close|usd }}</td>
+        </tr>
+        <tr>
+            <th>Adjusted Close</th>
+            <td>{{ object.adj_close|usd }}</td>
+        </tr>
+        <tr>
+            <th>Volume</th>
+            <td>{{ object.volume|intcomma }}</td>
+        </tr>
+        <tr>
+            <th>Unadjusted Volume</th>
+            <td>{{ object.unadjusted_volume|intcomma }}</td>
+        </tr>
+        <tr>
+            <th>Change</th>
+            <td>{{ object.change }}</td>
+        </tr>
+        <tr>
+            <th>Percent Change</th>
+            <td>{{ object.change_percent }}%</td>
+        </tr>
+        <tr>
+            <th>Volume Weighted Average Price</th>
+            <td>{{ object.vwap|usd }}</td>
+        </tr>
+        <tr>
+            <th>Stock Label</th>
+            <td>{{ object.label }}</td>
+        </tr>
+        <tr>
+            <th>Change over time</th>
+            <td>{{ object.change_over_time }}</td>
+        </tr>
+        </tbody>
+
+    </table>
+
+{% endblock content %}
