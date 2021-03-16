@@ -6,7 +6,7 @@ from finance.views import LandingView, StockHistoryListHTMLView, StockHistoryDet
 app_name = "finance"
 
 urlpatterns = [
-    path('api/list/', CompanyHistoryListAPIView.as_view()),
+    path('api/list/', CompanyHistoryListAPIView.as_view(), name="stock_api_list"),
     path('', LandingView.as_view(), name='index'),
     path('data/', StockHistoryListHTMLView.as_view(), name='stock_history_list'),
     path('stock/<pk>/', StockHistoryDetailHTMLView.as_view(), name='stock_history_detail'),

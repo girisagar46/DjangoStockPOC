@@ -13,7 +13,7 @@ class Command(BaseCommand):
     """Temporary Script to Initialize Data"""
 
     def add_arguments(self, parser):
-        parser.add_argument('-l', '--local', type=bool, help='Load the data from online or offline?')
+        parser.add_argument('-l', '--local', type=bool, default=False, help='Load the data from online or offline?')
 
     def save_to_db(self, historical_stock_list):
         for historical_stock in historical_stock_list:
