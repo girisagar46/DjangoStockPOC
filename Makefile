@@ -66,9 +66,9 @@ clean:
 
 initialize-offline:
 	@echo 'Import the data to DB from local file'
-	pipenv run python manage.py initialize -l true
+	pipenv run python manage.py initialize -l 1
 
 initialize-online:
 	@echo 'Import the data to DB from local file'
-	pipenv run python manage.py initialize -l false
+	pipenv run python manage.py initialize
 
