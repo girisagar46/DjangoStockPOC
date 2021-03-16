@@ -72,16 +72,21 @@ See Makefile for more details.
 ## Screenshots:
 
 - The landing page
+
 ![](docs/landing.png)
 
 - The Stock history list page
+
 ![](docs/stock_list.png)
 
 - The Stock filter page
+
 ![](docs/filter.png)  
 
 - The Stock detail page
+
 ![](docs/stock_detail.png)
 
 - Rest API page
+
 ![](docs/api.png)
