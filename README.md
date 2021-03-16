@@ -34,7 +34,7 @@ Build project and start
 $ docker-compose build
 ```
 
-Start with a pre builded project
+Start with a pre-built project
 
 ```
 $ docker-compose up
@@ -60,6 +60,10 @@ Run coverage
 $ make coverage
 ```
 
-- Swagger
+Clean up the database
 
-Go to [http://localhost:8000/swagger/](http://localhost:8000/swagger/) URL to see the API documentation
+```
+$ make clean
+```
+
+See Makefile for more details.
