@@ -1,0 +1,55 @@
+{% extends "_base.html" %}
+{% load bootstrap %}
+{% load financetags %}
+{% block content %}
+
+    <form method="get">
+        {{ filter.form | bootstrap }}
+        <button type="submit" class="btn btn-success">Search</button>
+    </form>
+    <table class="table table-responsive-sm table-light">
+        <table class="table align-middle">
+            <thead>
+            <tr>
+                <th>Company Symbol</th>
+                <th>Date</th>
+                <th>Open</th>
+                <th>High</th>
+                <th>Low</th>
+                <th>Close</th>
+                <th>Change Percent</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for object in object_list %}
+                <tr>
+                    <td>
+                        <a href="{% url 'finance:stock_history_detail' pk=object.pk %}">{{ object.company_symbol__symbol }}</a>
+                    </td>
+                    <td>{{ object.date|safe }}</td>
+                    <td>{{ object.open|usd }}</td>
+                    <td>{{ object.high|usd }}</td>
+                    <td>{{ object.low|usd }}</td>
+                    <td>{{ object.close|usd }}</td>
+                    <td>{{ object.change_percent }}%</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% if is_paginated %}
+            <div class="pagination">
+          <span class="page-links">
+              {% if page_obj.has_previous %}
+                  <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+              {% endif %}
+              <span class="page-current">
+                  Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+              </span>
+              {% if page_obj.has_next %}
+                  <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+              {% endif %}
+          </span>
+            </div>
+        {% endif %}
+    </table>
+{% endblock content %}
