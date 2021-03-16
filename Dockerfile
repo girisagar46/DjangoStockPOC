@@ -46,4 +46,4 @@ RUN python manage.py collectstatic --noinput
 
 RUN python manage.py migrate
 
-CMD gunicorn microservice.wsgi:application --bind localhost:8000
+CMD gunicorn DjangoStockPOC.wsgi:application --bind localhost:8000

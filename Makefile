@@ -25,8 +25,8 @@ dev:
 run: install
 	# the default settings file is development, it can be changed
 	# for any of the others, please don't use development setting in production
-	export DJANGO_SETTINGS_MODULE='microservice.settings.development';\
-	pipenv run gunicorn microservice.wsgi:application --bind localhost:8000
+	export DJANGO_SETTINGS_MODULE='DjangoStockPOC.settings.development';\
+	pipenv run gunicorn DjangoStockPOC.wsgi:application --bind localhost:8000
 
 shell:
 	@echo 'Starting pipenv shell. Press Ctrl-d to exit from the shell'
@@ -36,11 +36,11 @@ lint:
 	# starts a pipenv shell, shows autopep8 diff and then fixes the files
 	# does the same for isort
 	@echo '---Running autopep8---'
-	pipenv run autopep8 LocalFolioPOC -r -d
-	pipenv run autopep8 LocalFolioPOC -r -i
+	pipenv run autopep8 DjangoStockPOC -r -d
+	pipenv run autopep8 DjangoStockPOC -r -i
 	@echo '---Running isort---'
-	pipenv run isort LocalFolioPOC --diff
-	pipenv run isort LocalFolioPOC --atomic
+	pipenv run isort DjangoStockPOC --diff
+	pipenv run isort DjangoStockPOC --atomic
 
 coverage:
 	@echo 'Running tests and making coverage files'
