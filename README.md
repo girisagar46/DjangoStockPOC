@@ -1,5 +1,7 @@
 # Django
 
+> First install [poetry](https://python-poetry.org/docs/#installation) in your machine
+
 ## Launch App
 
 ```
@@ -81,7 +83,7 @@ See Makefile for more details.
 
 - The Stock filter page
 
-![](docs/filter.png)  
+![](docs/filter.png)
 
 - The Stock detail page
 
